@@ -1,0 +1,48 @@
+CREATE TABLE `booking` (
+  `booking_id` int NOT NULL,
+  `amount` int DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `refnumber` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`booking_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `bus` (
+  `bus_id` int NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `number` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`bus_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `location` (
+  `loc_id` int NOT NULL,
+  `city` varchar(20) DEFAULT NULL,
+  `state` varchar(20) DEFAULT NULL,
+  `terminal` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`loc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `schedule` (
+  `schedule_id` int NOT NULL,
+  `availability` int DEFAULT NULL,
+  `bus` varchar(255) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `destination` varchar(255) DEFAULT NULL,
+  `etadate` varchar(255) DEFAULT NULL,
+  `etatime` varchar(255) DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  `startingpoint` varchar(255) DEFAULT NULL,
+  `time` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`schedule_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `user` (
+  `user_id` int NOT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
